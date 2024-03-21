@@ -27,3 +27,5 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 npx ng build --configuration=production --base-href=/proj3/fe/
+
+https://devforum.okta.com/t/does-okta-offer-support-for-integrating-authentication-in-angular-16-applications-using-standalone-components/26090/2
