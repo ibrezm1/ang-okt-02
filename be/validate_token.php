@@ -1,4 +1,8 @@
 <?php
+require 'vendor/autoload.php';
+
+use Firebase\JWT\JWK;
+use Firebase\JWT\JWT;
 
 
 /** 
@@ -40,44 +44,65 @@ function getBearerToken() {
 
 
 
-function validateToken() {
-    // Get the token from the Authorization header
-    $token = getBearerToken();
 
-    // Check if the token is present
-    if (!$token) {
-        return json_encode(array("valid" => false, "reason" => "Token is missing"));
-    }
 
-    // Decode the JWT token (without validation)
-    $decodedToken = json_decode(base64_decode(str_replace('_', '/', str_replace('-', '+', explode('.', $token)[1]))), true);
+/**
+ * Fetch the JSON Web Key Set (JWKS) from the key endpoint with caching.
+ *
+ * @param string $keyEndpoint The URL of the key endpoint.
+ * @param int $cacheDuration The duration (in seconds) to cache the JWKS.
+ * @return array|false The JWKS array on success, false on failure.
+ */
+function fetchJwksWithCaching($keyEndpoint, $cacheDuration = 3600)
+{
+    // Cache file path
+    $cacheFile = 'jwks_cache.json';
 
-    // Extracting claims
-    $claims = $decodedToken;
-
-    // Check if iat and exp claims exist
-    if (isset($claims['iat']) && isset($claims['exp'])) {
-        // Get the current UNIX timestamp
-        $currentTimestamp = time();
-
-        // Check if current time is between iat and exp
-        if (
-            $currentTimestamp >= $claims['iat'] && 
-            $currentTimestamp <= $claims['exp'] &&
-            $claims['iss'] == 'https://xxxxxx.okta.com/oauth2/default'
-        ) {
-            // Token is valid and within the timeframe
-            return json_encode(array("valid" => true));
-        } else {
-            // Token is expired or invalid
-            return json_encode(array("valid" => false, "reason" => "Expired token"));
-        }
+    // Check if cache file exists and is not expired
+    if (file_exists($cacheFile) && time() - filemtime($cacheFile) < $cacheDuration) {
+        // Read JWKS from cache file
+        $jwks_json = file_get_contents($cacheFile);
     } else {
-        // iat and exp claims don't exist
-        return json_encode(array("valid" => false, "reason" => "Invalid token"));
+        // Fetch JWKS from the key endpoint
+        $jwks_json = file_get_contents($keyEndpoint);
+
+        // Save JWKS to cache file
+        file_put_contents($cacheFile, $jwks_json);
     }
+
+    // Decode JWKS JSON
+    $jwks = json_decode($jwks_json, true);
+
+    return $jwks ?: false;
 }
 
+/**
+ * Validate a JWT token.
+ *
+ * @param string $token The JWT token to validate.
+ * @param string $keyEndpoint The URL of the key endpoint.
+ * @return array An associative array containing the validation result and additional details.
+ */
+function validateToken($token, $keyEndpoint)
+{
+    try {
+        // Fetch JWKS with caching
+        $jwks = fetchJwksWithCaching($keyEndpoint);
+
+        if ($jwks === false) {
+            throw new Exception("Failed to fetch JWKS.");
+        }
+
+        // Decode the JWT token using Firebase\JWT\JWT::decode
+        $decoded = JWT::decode($token, JWK::parseKeySet($jwks));
+
+        // Token is valid
+        return array('valid' => true);
+    } catch (Exception $e) {
+        // Token is not valid
+        return array('valid' => false, 'error' => $e->getMessage());
+    }
+}
 
 
 ?>

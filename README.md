@@ -83,3 +83,24 @@ JWK (JSON Web Key):
 ```
 
 This JSON object represents a RSA public key in JWK format. If you have any further questions or need additional assistance, feel free to ask!
+
+
+```bash
+curl 'https://zoomcarft.000webhostapp.com/jwtt/vendor/run.php' \
+  -H 'authority: zoomcarft.000webhostapp.com' \
+  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'cache-control: max-age=0' \
+  -H 'cookie: _ga=GA1.2.1838603598.1709859769; _omappvp=EmK9fg6XBV8JI7dgcL9sEAUBSN0BN7Mnf6rA83MMEKYRap9xZlqzvqFH20KGcJG39L7tvazjuJfkisjX25UtC4rsPhvWOApJ; PHPSESSID=aj1g7lfb3mftkptkg83u6huk34; _gid=GA1.2.1116884527.1710981161; _ga_9B0FYPSWN9=GS1.2.1710992827.3.1.1710993115.60.0.0' \
+  -H 'referer: https://files.000webhost.com/' \
+  -H 'sec-ch-ua: "Chromium";v="122", "Not(A:Brand";v="24", "Google Chrome";v="122"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Linux"' \
+  -H 'sec-fetch-dest: document' \
+  -H 'sec-fetch-mode: navigate' \
+  -H 'sec-fetch-site: cross-site' \
+  -H 'sec-fetch-user: ?1' \
+  -H 'Authorization: Bearer eyJraWQiOiJjRnhrbFBlcGNYb1Ntb2pBVVhlMHdjRWNQSUtoV21URW52UTNFeklZcUNRIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULjVCZ2t1THROZ3R0RFdLMURXaVFNNWh2Q0dMWFBWMl9vQ2hDalFldlJnZDgiLCJpc3MiOiJodHRwczovL2Rldi0wNjMxNTA5MC5va3RhLmNvbS9vYXV0aDIvZGVmYXVsdCIsImF1ZCI6ImFwaTovL2RlZmF1bHQiLCJpYXQiOjE3MTEwNTAyNTcsImV4cCI6MTcxMTA1Mzg1NywiY2lkIjoiMG9hZnd3MjVjOHFOVmUwOFE1ZDciLCJ1aWQiOiIwMHVmY2MyYjh5MkFpRk4xVTVkNyIsInNjcCI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiXSwiYXV0aF90aW1lIjoxNzExMDUwMjU1LCJzdWIiOiJib2phZmk1OTczQGVidXRob3IuY29tIn0.WQ4nqQdtMCZlLdeAKjGqxcUGWbfzcCNb6LaODnaz7auVWQOl1-vW_GNDBalz4Dhd0E_yXLtUEr_dwRd2DK9F6TXvRlatDUDmy1kuKf6V7vxXIDGqwmGHgHNMl-QFDU1oGL5jrMftLzmBCpbRWiWLXrZnrCmcY0-NTUX5vQfBwtFnQ6s74RCLbonX-GX734sLoMwMOB76uUBSnYVEuDKHC4PIUBeKAYn2HftiuA0PqbM857ktjUP_Wk2QLRHbnFlhxDNpm_XtTNDBcnn3FcLgYL-mubjZr45YsPItPZM-P3PKVQcglw3vRFGIbEkQt2pTlP2OpX3QcEa0Hmz1TH1a0w'
+  -H 'upgrade-insecure-requests: 1' \
+  -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
+  ```
