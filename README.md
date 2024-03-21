@@ -52,10 +52,6 @@ To install Okta libraries for Angular, you can use the following npm command:
 npm install @okta/okta-angular@6.3 @okta/okta-auth-js@7.4
 ```
 
-Sure, here's your provided text in Markdown format:
-
-```markdown
-
 And here are the provided links:
 
 - [Zoomcarft Project](https://zoomcarft.000webhostapp.com/proj3/fe/list)
@@ -70,7 +66,7 @@ And here are the provided links:
 You can click on each link to visit the respective website or resource. If you have any further questions or need additional assistance, feel free to ask!
 
 ## Sample Token
-
+```markdown
 eyJraWQiOiJjRnhrbFBlcGNYb1Ntb2pBVVhlMHdjRWNQSUtoV21URW52UTNFeklZcUNRIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULmgxTWd2YUc2cnR2LU9uNExULWcwWm5BTHJ1U3JJLU1ka3VhWjBjUnlNZnciLCJpc3MiOiJodHRwczovL2Rldi0wNjMxNTA5MC5va3RhLmNvbS9vYXV0aDIvZGVmYXVsdCIsImF1ZCI6ImFwaTovL2RlZmF1bHQiLCJpYXQiOjE3MTEwNDIzMjksImV4cCI6MTcxMTA0NTkyOSwiY2lkIjoiMG9hZnd3MjVjOHFOVmUwOFE1ZDciLCJ1aWQiOiIwMHVmY2MyYjh5MkFpRk4xVTVkNyIsInNjcCI6WyJlbWFpbCIsInByb2ZpbGUiLCJvcGVuaWQiXSwiYXV0aF90aW1lIjoxNzExMDQyMjMyLCJzdWIiOiJib2phZmk1OTczQGVidXRob3IuY29tIn0.dJ9GNk6LipATd2Ky2I3ELr7o8yYBo2b8c67h-8ary7Jm4x8zw8MCiHBfHlvxAWkOISpE4ymEgIbFnl2dvzGHdEnMx-J183CVLDHTLNi2LVAybhFD0L53DXSx9vB5P1-nkOI4xzwBICfLFH_m1KTgcYxFxmr6AsguRSBq8dDwZPW-aBHxdwf56xVGjB-Wu1BevDYZ7GhD7GkzlEBdJy2U3wFfQdYnUHsaP1Xni4ZbfPvtas2cB66fAdRrw-VJ1xm-0MvfmnzzPfcua1h0brpk23poR21XuudjlppaAzkcB6KKBy78xPmjq07iNFWr7Xj7Uy2b70DNUKdsFsTZWy84Wg
 ```
 JWK (JSON Web Key):
