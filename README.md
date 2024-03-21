@@ -29,3 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 npx ng build --configuration=production --base-href=/proj3/fe/
 
 https://devforum.okta.com/t/does-okta-offer-support-for-integrating-authentication-in-angular-16-applications-using-standalone-components/26090/2
+https://developer.okta.com/docs/guides/sign-into-spa-redirect/angular/main/
