@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservationService {
-  private baseUrl = 'https://zoomcarft.000webhostapp.com/proj3/be/reservationv2.php';
+  private baseUrl = environment.backendUrl;
 
   constructor(private http: HttpClient) { }
 
@@ -14,7 +15,7 @@ export class ReservationService {
   getAllGuests(): Observable<any[]> {
     return this.http.get<any[]>(this.baseUrl);
   }
-
+  
   getGuestById(guestId: number): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}?id=${guestId}`);
   }
