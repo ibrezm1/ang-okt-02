@@ -1,0 +1,43 @@
+<app-home />
+
+<h1 class="pt-2"> Create a new reservation </h1>
+
+<form [formGroup]="fg" (ngSubmit)="onSubmit()">
+    <p>
+    <mat-form-field>
+        <mat-label for="name">Name</mat-label>
+        <input matInput id="first-name" type="text" formControlName="guestName">
+        <mat-error *ngIf="fg.get('guestName')?.invalid && fg.get('guestName')?.touched">Name is required</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field>
+        <mat-label for="email">Email</mat-label>
+        <input matInput id="email" type="email" formControlName="guestEmail">
+    </mat-form-field>
+</p>
+    <p>
+    <mat-form-field>
+        <mat-label for="checkInDate">Check in Date</mat-label>
+        <input matInput [matDatepicker]="datepicker" formControlName="checkInDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+          <mat-datepicker-actions>
+            <button mat-button matDatepickerCancel>Cancel</button>
+            <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+          </mat-datepicker-actions>
+        </mat-datepicker>        
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label for="roomNumber">Room Number</mat-label>
+        <input matInput id="roomNumber" type="number" formControlName="roomNumber">
+    </mat-form-field>
+
+</p> 
+    <button mat-raised-button [disabled]="fg.invalid" type="submit" class="btn btn-primary">Submit</button>
+    <br/>
+    <b>Current Values:</b>{{fg.value | json}}
+
+</form>
