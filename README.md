@@ -44,6 +44,9 @@ For integrating authentication in your Angular application using Okta, you can r
 - **Older 15 Version:**
   [Okta Developer Guide](https://developer.okta.com/docs/guides/sign-into-spa-redirect/angular/main/)
 
+- **Resource Server Example:**
+  [Resource Server and Angular](https://github.com/okta-samples/okta-angular-sample)
+
 ### Installing Okta Libraries
 
 To install Okta libraries for Angular, you can use the following npm command:
