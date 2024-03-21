@@ -65,6 +65,7 @@ And here are the provided links:
 - [Tutorial JWK and JWT](https://www.youtube.com/watch?v=jUzv7_SEPyo)
 - [JWT.io](https://jwt.io/)
 - [JWK](https://mkjwk.org/)
+- [firebase php](https://github.com/firebase/php-jwt)
 
 You can click on each link to visit the respective website or resource. If you have any further questions or need additional assistance, feel free to ask!
 
