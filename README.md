@@ -30,3 +30,5 @@ npx ng build --configuration=production --base-href=/proj3/fe/
 
 https://devforum.okta.com/t/does-okta-offer-support-for-integrating-authentication-in-angular-16-applications-using-standalone-components/26090/2
 https://developer.okta.com/docs/guides/sign-into-spa-redirect/angular/main/
+
+npm install @okta/okta-angular@6.3 @okta/okta-auth-js@7.4

@@ -4,7 +4,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { OktaAuthStateService, OKTA_AUTH } from '@okta/okta-angular';
 import { AuthState } from '@okta/okta-auth-js';
 import { Observable, filter, map } from 'rxjs';
-
+import { environment } from '../environments/environment';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -30,6 +30,10 @@ export class AppComponent {
   }
 
   public async signOut(): Promise<void> {
-    await this.oktaAuth.signOut();
+    await this.oktaAuth.signOut(
+      {
+        postLogoutRedirectUri: environment.logoutUri
+      }
+    );
   }
 }
