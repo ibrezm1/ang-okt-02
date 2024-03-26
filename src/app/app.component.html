@@ -1,4 +1,21 @@
 <div class="container">
+  <ng-container *ngIf="(isAuthenticated$ | async) === false; else signout">
+    <button (click)="signIn()">
+      <span>Sign in</span>
+    </button>
+  </ng-container>
+  <ng-template #signout>
+    <div class="card-container">
+      <nav class="routes">
+        <a routerLink="/">Home</a>
+        <a routerLink="/profile">Profile</a>
+        <a routerLink="/protected">Protected</a>
+      </nav>
+    </div>
+      <button (click)="signOut()">
+        <span>Sign out</span>
+      </button>
+  </ng-template>
   <router-outlet />
 </div>
 

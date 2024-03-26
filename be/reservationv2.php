@@ -1,5 +1,6 @@
 <?php
-include '../config/db_config.php';
+include 'validate_header.php';
+include 'db_config.php';
 
 // Allow requests from any origin
 header("Access-Control-Allow-Origin: *");
@@ -8,7 +9,8 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 
 // Allow the following headers from any origin
-header("Access-Control-Allow-Headers: Content-Type");
+// Allow the following headers from any origin
+header("Access-Control-Allow-Headers: Authorization, Content-Type");
 
 // Allow cookies to be sent or received from the client
 header("Access-Control-Allow-Credentials: true");
